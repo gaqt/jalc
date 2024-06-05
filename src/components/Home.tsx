@@ -43,13 +43,13 @@ const App: Component = () => {
   }
 
   return (
-    <div class="p-3 my-3 flex flex-col gap-2 bg-slate-700 w-100 lg:w-[70%] mx-auto">
-      <h1>Calculator Input:</h1>
+    <div class="flex flex-col gap-2">
       <form onSubmit={handleForm} class='flex flex-col gap-2'>
-        <span onKeyPress={handleKeyPress} ref={input} class="input bg-slate-900 text-white p-2" role="textbox" contentEditable></span>
-        <button class="btn bg-green-700 w-fit px-2">Calculate</button>
+        <label for="input">Text Input:</label>
+        <span onKeyPress={handleKeyPress} ref={input} id="input" class="input bg-slate-900 text-white p-2" role="textbox" contentEditable></span>
+        <button type="submit" class="btn bg-green-700 w-fit px-2">Calculate</button>
       </form>
-      <br/>
+      <br />
       <h2>Result:</h2>
       <span innerHTML={res() || "&nbsp;"} class="bg-slate-900 white p-2"></span>
       <Show when={err() != ""}>
